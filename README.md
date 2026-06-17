@@ -22,12 +22,13 @@ jobs:
 
 ## Inputs
 
-| Name                | Description                                  | Default           |
-|---------------------|----------------------------------------------|-------------------|
-| `java-version`      | Java version to use for building the plugin. | `17`              |
-| `java-distribution` | Java distribution to use.                    | `temurin`         |
-| `node-version`      | Node.js version to use for tests.            | `16`              |
-| `gradle-args`       | Additional arguments to pass to gradle.      | `paperwrightTest` |
+| Name                | Description                                        | Default           |
+|---------------------|----------------------------------------------------|-------------------|
+| `java-version`      | Java version to use for building the plugin.       | `17`              |
+| `java-distribution` | Java distribution to use.                          | `temurin`         |
+| `node-version`      | Node.js version to use for tests.                  | `16`              |
+| `gradle-args`       | Additional arguments to pass to gradle.            | `paperwrightTest` |
+| `working-directory` | Directory where your `gradlew` wrapper is located. | `.`               |
 
 ### Example with custom inputs:
 
@@ -38,6 +39,7 @@ jobs:
         with:
           java-version: '21'
           node-version: '20'
+          working-directory: './backend'
 ```
 
 ## License

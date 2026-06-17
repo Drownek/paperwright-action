@@ -22,6 +22,10 @@ inputs:
     description: 'Additional arguments to pass to gradle (default: paperwrightTest)'
     required: false
     default: 'paperwrightTest'
+  working-directory:
+    description: 'Directory where gradlew is located'
+    required: false
+    default: '.'
 
 runs:
   using: "composite"
@@ -39,4 +43,5 @@ runs:
 
     - name: Run Paperwright Tests
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: ./gradlew ${{ inputs.gradle-args }}
